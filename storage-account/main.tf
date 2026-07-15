@@ -1,24 +1,3 @@
-terraform {
-
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "~> 4.8.0"
-    }
-  }
-
-  required_version = ">= 1.9.0"
-}
-
-// Configure the Microsoft Azure Provider
-provider "azurerm" {
-  features {}
-}
-
-resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
-}
 
 resource "azurerm_storage_account" "example" {
   name                     = "azureterraformsa"
@@ -28,6 +7,9 @@ resource "azurerm_storage_account" "example" {
   account_replication_type = "GRS"
 
   tags = {
-    environment = "staging"
+    environment = local.common_tags.environment
+    label       = local.common_tags.label
+    stage       = local.common_tags.stage
   }
 }
+
