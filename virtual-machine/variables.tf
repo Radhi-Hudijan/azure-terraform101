@@ -35,3 +35,9 @@ variable "allowed_tags" {
     owner       = "team"
   }
 }
+
+# tuple example 
+variable "network_configurations" {
+  type    = tuple([bool, string, string])
+  default = [true, "10.0.0.0/16", "10.0.2.0/24"]
+}

@@ -6,8 +6,9 @@ resource "azurerm_resource_group" "example" {
 }
 
 resource "azurerm_virtual_network" "main" {
-  name                = "${var.prefix}-network"
-  address_space       = ["10.0.0.0/16"]
+  name = "${var.prefix}-network"
+  # address_space       = [var.network_configurations[1]]
+  address_space       = [element(var.network_configurations, 1)]
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
 }
