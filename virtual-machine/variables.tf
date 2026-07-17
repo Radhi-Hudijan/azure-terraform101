@@ -26,3 +26,12 @@ variable "allowed_locations" {
   description = "List of allowed Azure regions."
   default     = ["East US", "West Europe", "Southeast Asia"]
 }
+
+variable "allowed_tags" {
+  type        = map(string)
+  description = "Map of allowed tags for resources."
+  default = {
+    environment = "staging"
+    owner       = "team"
+  }
+}
