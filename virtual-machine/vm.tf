@@ -65,6 +65,7 @@ resource "azurerm_virtual_machine" "main" {
     disable_password_authentication = false
   }
   tags = {
-    environment = var.environment
+    environment = var.allowed_tags["environment"]
+    owner       = var.allowed_tags["owner"]
   }
 }
