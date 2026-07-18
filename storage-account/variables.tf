@@ -8,3 +8,9 @@ variable "environment" {
   description = "The environment for the resources."
   default     = "staging"
 }
+
+variable "storage_account_names" {
+  type        = set(string)
+  description = "List of storage account names."
+  default     = ["storageacct1", "storageacct2"]
+}
