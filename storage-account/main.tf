@@ -12,5 +12,7 @@ resource "azurerm_storage_account" "example" {
     label       = local.common_tags.label
     stage       = local.common_tags.stage
   }
+
+
 }
 

@@ -12,5 +12,5 @@ variable "environment" {
 variable "storage_account_names" {
   type        = set(string)
   description = "List of storage account names."
-  default     = ["storageacct1", "storageacct2"]
+  default     = ["storageacct154543543543", "storageacct2453453"]
 }
